@@ -1,0 +1,88 @@
+.wrap main {
+  background: #f5f9fc;
+  padding: 0.75rem;
+}
+.wrap main .tab {
+  margin: 0.625rem 0;
+  text-align: center;
+}
+.wrap main .tab .item {
+  width: 33.33%;
+  font-size: 0.6875rem;
+}
+.wrap main .tab .item p {
+  margin-top: 0.625rem;
+}
+.wrap main .all {
+  height: 3.125rem;
+  line-height: 3.125rem;
+  font-size: 0.9375rem;
+}
+.wrap main .all .r {
+  font-size: 0.625rem;
+}
+.wrap main .quanItem {
+  padding: 1.125rem 1.4375rem;
+  align-items: center;
+  background: #fff;
+  border-radius: 0.625rem;
+  margin-bottom: 0.75rem;
+}
+.wrap main .quanItem .l {
+  align-items: center;
+}
+.wrap main .quanItem .l .price {
+  color: #f0a622;
+  text-align: center;
+  margin-right: 1.25rem;
+}
+.wrap main .quanItem .l .price .title {
+  font-size: 1.25rem;
+  color: #ff4b13;
+}
+.wrap main .quanItem .l .price .title i {
+  font-style: normal;
+  font-size: 0.625rem;
+}
+.wrap main .quanItem .l .price .con {
+  margin-top: 0.75rem;
+  font-size: 0.625rem;
+}
+.wrap main .quanItem .l .time {
+  font-size: 0.8125rem;
+}
+.wrap main .quanItem .l .time p:first-child {
+  color: #303030;
+}
+.wrap main .quanItem .l .time p:nth-child(2) {
+  margin-top: 0.75rem;
+  color: #f0a622;
+}
+.wrap main .quanItem .l .time p:last-child {
+  margin-top: 0.75rem;
+  color: #adadad;
+  font-size: 0.625rem;
+}
+.wrap main .quanItem .r {
+  width: 4.25rem;
+  height: 1.625rem;
+  border-radius: 0.8125rem;
+  font-size: 0.625rem;
+  line-height: 1.625rem;
+  text-align: center;
+  background: linear-gradient(to right, #fe8f09, #ff5f1f);
+  color: #fff;
+}
+.wrap .header {
+  align-items: center;
+  padding: 2.9375rem 0.625rem 0.8125rem;
+  position: relative;
+  text-align: center;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #fee332, #ffc50f);
+  font-size: 1rem;
+}
+.wrap .header .back {
+  position: absolute;
+  left: 0.625rem;
+}

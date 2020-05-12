@@ -1,0 +1,24 @@
+.footTab {
+  text-align: center;
+  height: 3.0625rem;
+  border-top: 0.0625rem solid #c7c7c7;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+}
+.footTab .item.cur {
+  color: #f2ba50 !important;
+}
+.footTab img {
+  width: 1.1875rem;
+  height: 1.1875rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.625rem;
+}
+.footTab p:last-child {
+  font-size: 0.625rem;
+}

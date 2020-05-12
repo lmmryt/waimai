@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./lib/swiper.min.css" rel="stylesheet">
+  <link href="./lib/reset.css" rel="stylesheet">
+  <style>
+    @charset "UTF-8";
+    @import url("./common/styles/icon.css");
+
+
+    .content {
+      overflow: hidden;
+    }
+
+    .header {
+      height: 12.5rem;
+    }
+
+    .header .swiper-container {
+      height: 8.125rem;
+    }
+
+    .header .swiper-container img {
+      width: 100%;
+      height: 8.125rem;
+    }
+
+    .header .bg-wrapper {
+      width: 100%;
+      height: 9.375rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      background-size: 100% 135%;
+      background-position: center -0.75rem;
+    }
+
+    .header .shopInfo {
+      box-sizing: border-box;
+      position: relative;
+      top: -2.1875rem;
+      height: 5.9375rem;
+      background-color: #fff;
+      margin: 0 0.9375rem;
+      z-index: 33;
+      box-shadow: 0rem 0.125rem 0.125rem #eee;
+      padding: 0.8125rem 0.8125rem 0;
+    }
+
+    .header .shopInfo .title {
+      margin-bottom: 0.9375rem;
+      font-size: 1rem;
+    }
+
+    .header .shopInfo .meg {
+      font-size: 0.75rem;
+      color: #595959;
+      margin-bottom: 1.0625rem;
+    }
+
+    .header .shopInfo .img {
+      position: absolute;
+      top: -1.375rem;
+      right: 0.9375rem;
+      border-radius: 0.3125rem;
+      width: 2.875rem;
+      height: 2.875rem;
+    }
+
+    .header .shopInfo .img img {
+      width: 100%;
+    }
+
+    /* .header .shopInfo .pull {
+     height: 1rem;
+     text-align: center;
+}
+ */
+    /* 顶部通栏*/
+    .header .top-wrapper {
+      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #000;
+    }
+
+    .header .top-wrapper .back-wrapper {
+      width: 3.125rem;
+      height: 1.9375rem;
+      /*background: red;
+     */
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: center;
+      line-height: 1.9375rem;
+    }
+
+    .header .top-wrapper .back-wrapper span {
+      display: inline-block;
+      color: white;
+    }
+
+    .header .top-wrapper .search-wrapper {
+      width: 109%;
+      height: 1.9375rem;
+      /*background: purple;
+     */
+      padding: 0 6.5rem 0 3.125rem;
+      /* 设置盒子从边框开始计算*/
+      box-sizing: border-box;
+    }
+
+    .header .top-wrapper .search-wrapper .search-icon {
+      width: 1.75rem;
+      height: 1.9375rem;
+      background: url(./images/shop/titans_h5_search@2x.png) no-repeat 0.6875rem center;
+      background-size: 0.8125rem 0.8125rem;
+      position: absolute;
+    }
+
+    .header .top-wrapper .search-wrapper .search-bar {
+      width: 100%;
+      height: 1.9375rem;
+      border: 0;
+      /* 设置盒子从边框开始计算*/
+      box-sizing: border-box;
+      background: #fff;
+      border-radius: 1.5625rem;
+      padding-left: 1.75rem;
+      /* 去除选中时蓝色边框*/
+      outline: none;
+    }
+
+    .header .top-wrapper .more-wrapper {
+      /*width: 6.5rem;
+     */
+      /*height: 1.9375rem;
+     */
+      height: 1.5rem;
+      /*background: blue;
+     */
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0.4375rem 0.9375rem 0 0rem;
+    }
+
+    .header .top-wrapper .more-wrapper .spelling-bt {
+      width: 1rem;
+      height: 1.0625rem;
+    }
+
+    .header .top-wrapper .more-wrapper .spelling-bt img {
+      width: 1rem;
+    }
+
+    .header .top-wrapper .more-wrapper .more-bt {
+      float: right;
+      width: 1.25rem;
+      height: 1.5rem;
+      margin-left: 0.8125rem;
+      margin-top: 0.375rem;
+    }
+
+    .header .top-wrapper .more-wrapper .more-bt .s-radius {
+      width: 0.1875rem;
+      height: 0.1875rem;
+      border-radius: 50%;
+      border: 1px solid white;
+      display: block;
+      float: left;
+      margin-right: 0.0625rem;
+    }
+
+    .nav {
+      display: flex;
+      width: 100%;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      padding-right: 0.9375rem;
+      box-sizing: border-box;
+      border-bottom: 0.0625rem solid #e4e4e4;
+      background: #fff;
+    }
+
+    .nav.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 55;
+    }
+
+    .nav .collect {
+      float: right;
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .nav .collect img {
+      width: 100%;
+    }
+
+    .nav .nav-item {
+      width: 4rem;
+      text-align: center;
+      text-decoration: none;
+      color: #666666;
+      position: relative;
+    }
+
+    /* 选中后的样式*/
+    .nav .active {
+      color: #454545;
+      font-weight: 600;
+    }
+
+    .nav .active .line {
+      width: 2.375rem;
+      height: 0.125rem;
+      background: #ffbb22;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      margin-left: -1.1875rem;
+    }
+
+    .goods {
+      display: flex;
+      /* 通过该方式确定高度*/
+      overflow: hidden;
+      width: 100%;
+      background: #f4f4f4;
+    }
+
+    .goods .menu-wrapper {
+      background: #f4f4f4;
+    }
+
+    .goods .menu-wrapper .menu-item {
+      text-align: center;
+      width: 5.625rem;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      position: relative;
+    }
+
+    .goods .menu-wrapper .menu-item .text {
+      height: 2.5rem;
+      line-height: 2.5rem;
+    }
+
+    .goods .menu-wrapper .menu-item.current {
+      background: white;
+      margin-top: -0.0625rem;
+    }
+
+    .goods .menu-wrapper .menu-item:first-child.current {
+      margin-top: 0.0625rem;
+    }
+
+    .goods .menu-wrapper .menu-item .text {
+      font-size: 0.8125rem;
+      /* 多行显示省略号，使用WebKit的CSS扩展属性，适用方位Webkit浏览器以及移动端*/
+      /* 用来显示一个块元素显示的文本行数*/
+      /* 必须，将对象作为弹性伸缩盒子模型显示*/
+      /* 必须，设置或检索伸缩盒子的子元素排列方式*/
+    }
+
+    .goods .menu-wrapper .menu-item .text .icon {
+      width: 0.9375rem;
+      height: 0.9375rem;
+      vertical-align: middle;
+    }
+
+    .goods .menu-wrapper .menu-item .num {
+      position: absolute;
+      right: 0.3125rem;
+      top: 0.3125rem;
+      width: 1.0625rem;
+      height: 1.0625rem;
+      border-radius: 50%;
+      color: white;
+      font-style: normal;
+      background: red;
+      text-align: center;
+      font-size: 0.4375rem;
+      line-height: 1.0625rem;
+    }
+
+    .goods .foods-wrapper {
+      flex: 1;
+      background: #fff;
+    }
+
+    .goods .foods-wrapper ul:first-child {
+      padding-bottom: 3.125rem;
+      overflow-y: scroll;
+      height: calc(100vh - 2.5rem);
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .goods .foods-wrapper .container-list {
+      padding: 0.6875rem 0.6875rem 0 0.6875rem;
+    }
+
+    .goods .foods-wrapper .container-list img {
+      width: 100%;
+      margin-bottom: 0.6875rem;
+      border-radius: 0.3125rem;
+    }
+
+    .goods .foods-wrapper .food-list {
+      padding: 0.6875rem 0.6875rem 0;
+    }
+
+    .goods .foods-wrapper .food-list .title {
+      height: 0.8125rem;
+      font-size: 0.8125rem;
+      /* background: url(btn_yellow_highlighted@2x.png) no-repeat left center;
+     */
+      background-size: 0.125rem 0.625rem;
+      padding-left: 0.4375rem;
+      margin-bottom: 0.75rem;
+      font-weight: normal;
+    }
+
+    .goods .foods-wrapper .food-list .food-item,
+    .cartView .con ul .food-item {
+      display: flex;
+      margin-bottom: 0.625rem;
+      position: relative;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .pic,
+    .cartView .con ul .food-item .pic {
+      width: 5rem;
+      height: 5rem;
+      margin-right: 0.4375rem;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .pic img,
+    .cartView .con ul .food-item .pic img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .tatil,
+    .cartView .con ul .food-item .tatil {
+      flex: 1;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .tatil h3,
+    .cartView .con ul .food-item .tatil h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5625rem;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .tatil .subTitle,
+    .cartView .con ul .food-item .tatil .subTitle {
+      font-size: 0.75rem;
+      color: #b7b7b7;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .price,
+    .cartView .con ul .food-item .priceBox .price {
+      color: #f44e21;
+      margin-right: 0.3125rem;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .price text,
+    .cartView .con ul .food-item .priceBox .price text {
+      font-size: 0.75rem;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .del,
+    .cartView .con ul .food-item .priceBox .del {
+      font-size: 0.5rem;
+      color: #9d9d9d;
+      position: relative;
+      bottom: -0.375rem;
+      text-decoration: line-through;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .select,
+    .cartView .con ul .food-item .priceBox .select {
+      width: 3.25rem;
+      height: 1.375rem;
+      line-height: 1.375rem;
+      text-align: center;
+      background-image: linear-gradient(to right, #fee332, #ffc50f);
+      float: right;
+      border-radius: 0.625rem;
+      font-size: 0.625rem;
+      position: relative;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .select i.num,
+    .cartView .con ul .food-item .priceBox .select i.num {
+      position: absolute;
+      right: 0rem;
+      top: -0.6875rem;
+      width: 1.0625rem;
+      height: 1.0625rem;
+      border-radius: 50%;
+      color: white;
+      font-style: normal;
+      background: red;
+      text-align: center;
+      font-size: 0.4375rem;
+      line-height: 1.0625rem;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .total .number,
+    .cartView .con ul .food-item .priceBox .total .number {
+      width: 1.625rem;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .total i,
+    .specs .footer .total i,
+    .cartView .con ul .food-item .priceBox .total i {
+      display: inline-block;
+      width: 1.5625rem;
+      height: 1.5625rem;
+      line-height: 1.5625rem;
+      text-align: center;
+      border-radius: 50%;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .total i:first-child,
+    .cartView .con ul .food-item .priceBox .total i:first-child {
+      border: 1px solid #e6e6e6;
+      background: #f8f8f8;
+    }
+
+    .goods .foods-wrapper .food-list .food-item .priceBox .total i:last-child,
+    .cartView .con ul .food-item .priceBox .total i:last-child {
+      background-image: linear-gradient(to right, #fee332, #ffc50f);
+    }
+
+    .cart {
+      padding: 0 1.25rem;
+      position: fixed;
+      bottom: 0.3125rem;
+      left: 0;
+      width: 100vw;
+      box-sizing: border-box;
+      z-index: 1002;
+    }
+
+    .cart .shopping {
+      width: 4.125rem;
+      height: 2.6875rem;
+      background: #222;
+      border-radius: 1.375rem 0.3125rem 0.3125rem 1.375rem;
+      color: #d6bb1b;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.5rem;
+      margin-right: 0.3125rem;
+    }
+
+    .cart .shopping p {
+      margin-top: 0.25rem;
+    }
+
+    .cart .total {
+      flex: 1;
+      padding: 0.3125rem;
+      height: 2.6875rem;
+      box-sizing: border-box;
+      background: #222;
+      align-items: center;
+      border-radius: 0.3125rem 1.375rem 1.375rem 0.3125rem;
+      position: relative;
+    }
+
+    .cart .total .noGoods {
+      color: #bfbfbf;
+      font-size: 0.5rem;
+    }
+
+    .cart .total .noGoods img {
+      width: 2rem;
+      height: 100%;
+    }
+
+    .cart .total .cartImg {
+      margin-right: 0.3125rem;
+      position: relative;
+    }
+
+    .cart .total .cartImg .num {
+      width: 1.125rem;
+      height: 1.125rem;
+      line-height: 1.125rem;
+      border-radius: 50%;
+      position: absolute;
+      font-style: normal;
+      background: #ff3f00;
+      color: #fff;
+      text-align: center;
+      font-size: 0.5rem;
+      left: 1rem;
+      top: 0.375rem;
+    }
+
+    .cart .total .price {
+      color: #fff;
+    }
+
+    .cart .total .price p:first-child {
+      font-size: 0.8125rem;
+    }
+
+    .cart .total .price p:last-child {
+      font-size: 0.625rem;
+      color: #949494;
+      margin-top: 0.3125rem;
+    }
+
+    .cart .total .sum {
+      width: 4.125rem;
+      position: absolute;
+      right: -0.0625rem;
+      top: 0;
+      border-radius: 0rem 1.375rem 1.375rem 0rem;
+      background-image: linear-gradient(to right, #fee332, #ffc50f);
+      height: 2.75rem;
+      line-height: 2.6875rem;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    .mask {
+      background: #000;
+      opacity: .6;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1002;
+    }
+
+    .code {
+      z-index: 1003;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 0, 0, .6);
+    }
+
+    .code img {
+      width: 12.5rem;
+      height: 12.5rem;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+
+    .ratings {
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .ratings .ratings-wrapper .overview {
+      padding: 0.9375rem 0;
+      display: flex;
+      border-bottom: 0.9375rem solid #efefef;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left {
+      flex: 1;
+      padding-left: 0.9375rem;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .comment-score {
+      float: left;
+      width: 3rem;
+      text-align: center;
+      margin-right: 1.625rem;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .comment-score .score {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #ffb000;
+      margin-bottom: 0.5625rem;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .comment-score .text {
+      font-size: 0.6875rem;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .other-score {
+      float: left;
+      margin-top: 0.5625rem;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .other-score .item {
+      height: 0.6875rem;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .other-score .item .text {
+      font-size: 0.6875rem;
+      color: #666666;
+      margin-right: 0.6875rem;
+      float: left;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .other-score .item .star {
+      float: left;
+      margin-right: 0.6875rem;
+      position: relative;
+      margin-top: -0.25rem;
+    }
+
+    .star .star-item {
+      display: inline-block;
+      width: 0.625rem;
+      height: 0.625rem;
+      margin-right: 0.1875rem;
+      background-repeat: no-repeat;
+      background-size: 0.625rem 0.625rem;
+    }
+
+    .star .on {
+      background-image: url(./images/shop/starall.png);
+    }
+
+    .star .half {
+      background-image: url(./images/shop/starhalf.png);
+    }
+
+    .star .off {
+      background-image: url(./images/shop/starno.png);
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .other-score .item .score {
+      font-size: 0.6875rem;
+      color: #FFB000;
+      float: left;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-left .other-score .quality-score {
+      margin-bottom: 0.875rem;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-right {
+      flex: 0 0 6.25rem;
+      text-align: center;
+      border-left: 0.0625rem solid #9D9D9D;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-right .delivery-score .score {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: #999999;
+      margin-bottom: 0.625rem;
+      margin-top: 0.1875rem;
+    }
+
+    .ratings .ratings-wrapper .overview .overview-right .delivery-score .text {
+      font-size: 0.6875rem;
+      color: #999999;
+    }
+
+    .rating-list {
+      padding: 0 0.9375rem;
+      background: #fff;
+    }
+
+    .rating-list .comment-item {
+      padding: 1rem 1rem 1rem 0;
+      border-bottom: 0.0625rem solid #F4F4F4;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+    }
+
+    .rating-list .comment-item .comment-header {
+      flex: 0 0 2.1875rem;
+      margin-right: 0.6875rem;
+    }
+
+    .rating-list .comment-item .comment-header img {
+      width: 2.1875rem;
+      height: 2.1875rem;
+      border-radius: 50%;
+    }
+
+    .rating-list .comment-item .comment-main {
+      flex: 1;
+    }
+
+    .rating-list .comment-item .comment-main .user {
+      width: 50%;
+      font-size: 0.6875rem;
+      color: #333333;
+    }
+
+    .rating-list .comment-item .comment-main .time {
+      width: 50%;
+      text-align: right;
+      font-size: 0.5625rem;
+      color: #666666;
+    }
+
+    .rating-list .comment-item .comment-main .star-wrapper {
+      margin-top: 0.75rem;
+      margin-bottom: 0.9375rem;
+      width: 100%;
+    }
+
+    .rating-list .comment-item .comment-main .star-wrapper .text {
+      color: #999999;
+      font-size: 0.6875rem;
+      float: left;
+      margin-right: 0.9375rem;
+    }
+
+    .rating-list .comment-item .comment-main .star-wrapper .star {
+      margin-left: 0.4375rem;
+      margin-top: -0.25rem;
+      position: relative;
+      top: -0.25rem;
+    }
+
+    .rating-list .comment-item .comment-main .star-wrapper .star .star-item {
+      margin-right: 0.3125rem;
+    }
+
+    .rating-list .comment-item .comment-main .c_content {
+      font-size: 0.8125rem;
+      line-height: 1.1875rem;
+      width: 100%;
+    }
+
+    .rating-list .comment-item .comment-main .c_content i {
+      color: #576b95;
+    }
+
+    .rating-list .comment-item .comment-main .img-wrapper {
+      margin-top: 0.5625rem;
+      overflow-x: scroll;
+      width: 100%;
+      display: -webkit-box;
+    }
+
+    .rating-list .comment-item .comment-main .img-wrapper img {
+      width: 4.125rem;
+      height: 4.125rem;
+      border-radius: 0.3125rem;
+    }
+
+    .tabItem {
+      background: #eee;
+    }
+
+    .tabItem.fixed {
+      position: fixed;
+      top: 2.5rem;
+      left: 0;
+      right: 0;
+      z-index: 55;
+    }
+
+    .tabItem .item {
+      margin-bottom: 0.9375rem;
+    }
+
+    .tabItem .safety-wrapper {
+      padding: 0.9375rem 0.875rem 0.9375rem 2.5rem;
+      background-repeat: no-repeat !important;
+      background-size: 0.875rem 1rem;
+      background-position: 0.9375rem center;
+      font-size: 0.875rem;
+      background-color: #fff;
+    }
+
+    .borderb {
+      border-bottom: 0.0625rem solid #eee;
+    }
+
+    .safety-wrapper span {
+      float: right;
+      font-size: 0.875rem;
+    }
+
+    /* .ball{
+     width: 0.9375rem;
+     height: 0.9375rem;
+     background: #f44e21;
+}
+ */
+    /* * 飞入的商品标签的默认样式 */
+    .ball {
+      height: 1.125rem;
+      width: 1.125rem;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 2.5rem;
+      z-index: 1002;
+      right: 87.5rem;
+    }
+
+    /* run_top_right为飞入的商品标签的class * */
+    .run_top_right {
+      display: block;
+      animation: run-right 400ms 0s 1 cubic-bezier(.5, .49, .54, .55), run-top 400ms 0s 1 cubic-bezier(.5, .49, .54, .55);
+      animation-fill-mode: forwards;
+    }
+
+    /* * 下面两个动画必有，名字不要更改 */
+    @-webkit-keyframes run-top {
+      0% {
+        top: 6.25rem;
+      }
+
+      50% {
+        top: 25rem;
+      }
+
+      100% {
+        top: 6.25rem;
+      }
+    }
+
+    @-webkit-keyframes run-right {
+      0% {
+        right: 87.5rem;
+      }
+
+      100% {
+        right: 3.125rem;
+        /*transform: scale(0.3);
+         */
+        width: 1.875rem;
+        height: 1.875rem;
+      }
+    }
+
+    /* 选规格 */
+    .specsBox {
+      position: fixed;
+      z-index: 1002;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .specs {
+      background: #fff;
+      padding: 0.9375rem 0.625rem;
+      width: 20rem;
+      border-radius: 0.625rem;
+    }
+
+    .specs .title {
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .specs .size h4 {
+      color: #5b5b5b;
+    }
+
+    .specs .size .items {
+      overflow: hidden;
+    }
+
+    .specs .size .items .item {
+      padding: 0.625rem 0.3125rem;
+      border-radius: 0.3125rem;
+      border: 1px solid #eeeeee;
+      float: left;
+      margin-right: 0.875rem;
+      margin-top: 0.625rem;
+    }
+
+    .specs .size .items .item.cur {
+      background: #fff1b8;
+      border-color: #f6db92;
+    }
+
+    .specs .selected {
+      margin-top: 2.375rem;
+      margin-bottom: 0.625rem;
+      height: 2rem;
+      line-height: 2rem;
+      background: #f8f8f8;
+      color: #9e9e9e;
+    }
+
+    .specs .selected text {
+      color: #373737;
+    }
+
+    .specs .footer {
+      align-items: center;
+    }
+
+    .specs .footer .price {
+      color: #ea542e;
+    }
+
+    .specs .footer .price i {
+      font-style: normal;
+      font-size: 0.625rem;
+      margin-right: 0.3125rem;
+    }
+
+    .specs .footer .addCart {
+      padding: 0.375rem;
+      background: #ffcd3e;
+      border-radius: 1rem;
+    }
+
+    .specs .footer .total i:first-child {
+      border: 1px solid #e6e6e6;
+      background: #f8f8f8;
+    }
+
+    .specs .footer .total .number {
+      width: 1.625rem;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .specs .footer .total i:last-child {
+      background-image: linear-gradient(to right, #fee332, #ffc50f);
+    }
+
+    .close {
+      width: 2.375rem;
+      height: 2.375rem;
+      line-height: 2.375rem;
+      border-radius: 50%;
+      background: #d1d1d1;
+      font-size: 0.875rem;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 1.75rem;
+    }
+
+    /* 购车详情 */
+    .cartView {
+      z-index: 1004;
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      background: #fff;
+      border-radius: 0.625rem 0.625rem 0 0;
+    }
+
+    .cartView .head {
+      background: #fec009;
+      height: 1.75rem;
+      line-height: 1.75rem;
+      text-align: center;
+      width: 100vw;
+      border-radius: 0.625rem 0.625rem 0 0;
+    }
+
+    .cartView .head text {
+      font-size: 0.625rem;
+      color: red;
+      opacity: .8;
+    }
+
+    .cartView .subhead {
+      padding: 0.75rem 0.9375rem;
+      font-size: 0.75rem;
+      text-align: right;
+      color: #5b5b5b;
+      border-bottom: 0.0625rem solid #f5f5f5;
+    }
+
+    .cartView .subhead img {
+      width: 0.75rem;
+    }
+
+    .cartView .con ul {
+      padding-bottom: 3.625rem;
+      max-height: 28.75rem;
+      overflow-y: scroll;
+    }
+
+    .cartView .con ul li {
+      padding: 0.9375rem;
+      border-bottom: 0.0625rem solid #f5f5f5;
+    }
+
+    .cartView .con ul .food-item .priceBox {
+      margin-top: 0.625rem;
+    }
+
+    /* 返回 */
+    .back {
+      position: absolute;
+      top: 2.875rem;
+      left: 0.625rem;
+      z-index: 999;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="content">
+    <div class="header">
+      <div class="back">
+        <a href="./index.html"><img src="./common/images/back.png" alt=""></a>
+
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="bg-wrapper"
+              style="background-image: url(&quot;http://p0.meituan.net/xianfu/19c002c5963a289206e756092995a2fe230070.jpg&quot;);">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-wrapper"
+              style="background-image: url(&quot;http://p0.meituan.net/xianfu/19c002c5963a289206e756092995a2fe230070.jpg&quot;);">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 搜索 -->
+      <!-- <div class="top-wrapper">
+        <div class="back-wrapper"><span class="icon-arrow_lift"></span></div>
+        <form class="search-wrapper"><span class="search-icon"></span> <input type="text" placeholder="输入搜索关键词"
+            class="search-bar"></form>
+        <div class="more-wrapper">
+          <a href="#" class="spelling-bt">
+            <img src="./images/shop/star.png" alt="">
+          </a>
+          <div class="more-bt"><i class="s-radius"></i> <i class="s-radius"></i> <i class="s-radius"></i></div>
+        </div>
+      </div> -->
+
+      <!-- 商家信息 -->
+      <div class="shopInfo">
+        <div class="img">
+          <img src="./images/shop/微信图片_20200422112845.png" alt="">
+        </div>
+        <h2 class="title">十里桃花</h2>
+        <div class="meg">店家说明，本店放心吃，地方名菜</div>
+        <!-- <div class="pull">
+          <img src="./images/shop/pull.png" alt="">
+        </div> -->
+      </div>
+    </div>
+    <div class="nav sb ">
+      <div class="tabnav flex" id="tabnav">
+        <a href="#/goods" class="nav-item router-link-exact-active active">
+          购物
+          <i class="line"></i></a>
+        <a href="#/ratings" class="nav-item">
+          评价
+          <i class="line"></i></a>
+        <a href="#/seller" class="nav-item">
+          商家
+          <i class="line"></i></a>
+      </div>
+      <div class="collect">
+        <!-- 收藏前 -->
+        <img src="./images/shop/collect.png" alt="" class="collectBefore">
+        <!-- 收藏后 -->
+        <img src="./images/shop/collected.png" alt="" class="collectAfter" style="display: none;">
+      </div>
+    </div>
+    <div class="tabItem ">
+      <div class="goods">
+        <div class="menu-wrapper" ref="menuScroll">
+          <ul>
+            <li class="menu-item current">
+              <p class="text">
+                烧烤
+              </p>
+              <i class="num">1</i>
+            </li>
+            <li class="menu-item">
+              <p class="text">
+                生鲜
+              </p>
+            </li>
+            <li class="menu-item">
+              <p class="text">
+                绿蔬
+              </p>
+            </li>
+            <li class="menu-item">
+              <p class="text">
+                肉类
+              </p>
+            </li>
+            <li class="menu-item">
+              <p class="text">
+                川味
+              </p>
+            </li>
+            <li class="menu-item">
+              <p class="text">
+                粤菜
+              </p>
+            </li>
+            <li class="menu-item">
+              <p class="text">
+                湘菜
+              </p>
+            </li>
+            <li class="menu-item">
+              <p class="text">
+                西餐
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="foods-wrapper" ref="foodScroll">
+          <ul class="outer">
+
+            <!-- 具体分类-->
+            <li class="food-list food-list-hook">
+              <h3 class="title tabtitle">烧烤</h3>
+              <!--具体商品列表-->
+              <ul>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+                        <div class="del">
+                          <text> ￥</text>65
+                        </div>
+                      </div>
+                      <div class="select" id="select">
+                        选规格
+                        <i class="num">2</i>
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+            </li>
+            <li class="food-list food-list-hook">
+              <h3 class="title tabtitle">生鲜</h3>
+              <!--具体商品列表-->
+              <ul>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+            </li>
+            <li class="food-list food-list-hook">
+              <h3 class="title tabtitle">绿蔬</h3>
+              <!--具体商品列表-->
+              <ul>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+            </li>
+            <li class="food-list food-list-hook">
+              <h3 class="title tabtitle">肉类</h3>
+              <!--具体商品列表-->
+              <ul>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+            </li>
+            <li class="food-list food-list-hook">
+              <h3 class="title tabtitle">川味</h3>
+              <!--具体商品列表-->
+              <ul>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+            </li>
+            <li class="food-list food-list-hook">
+              <h3 class="title tabtitle">粤菜</h3>
+              <!--具体商品列表-->
+              <ul>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+            </li>
+            <li class="food-list food-list-hook">
+              <h3 class="title tabtitle">湘菜</h3>
+              <!--具体商品列表-->
+              <ul>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+            </li>
+            <li class="food-list food-list-hook">
+              <h3 class="title tabtitle">西餐</h3>
+              <!--具体商品列表-->
+              <ul>
+                <li class="food-item">
+                  <div class="pic">
+                    <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+                  </div>
+                  <div class="tatil">
+                    <h3>白果王水果沙拉</h3>
+                    <div class="subTitle">
+                      脆糯营养，口感好
+                    </div>
+                    <div class="priceBox flex sb">
+                      <div class="box flex">
+                        <div class="price"><text>￥</text>45</div>
+
+                      </div>
+                      <div class="total">
+                        <i>-</i>
+                        <text class="number">
+                          1
+                        </text>
+                        <i class="joinCar">+</i>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 购物车-->
+      <div class="cart flex">
+        <div class="shopping flex" id="shopping">
+          <p>
+            <img src="./images/shop/shopping.png" alt="">
+          </p>
+          <p>联系商家</p>
+        </div>
+        <div class="total flex">
+          <div class="noGoods">
+            <img src="./images/shop/cart2.png" alt="" class="goodsCar2">
+            另需配送费 ￥0
+          </div>
+          <div class="hasGoods flex" style="display:none">
+            <div class="cartImg" id="showCart">
+              <i class="num goodsCar">1</i>
+              <img src="./images/shop/cart.png" alt="" class="">
+            </div>
+            <div class="price">
+              <p>￥732</p>
+
+              <p>另需配送费￥0</p>
+            </div>
+            <div class="sum">
+              <a href="./pay.html">去结算</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabItem" style="display:none;">
+      <div class="ratings">
+        <div class="ratings-wrapper">
+          <div class="overview">
+            <div class="overview-left">
+              <div class="comment-score">
+                <p class="score">4.7</p>
+                <p class="text">商家评分</p>
+              </div>
+              <div class="other-score">
+                <div class="quality-score item"><span class="text">包装</span>
+                  <div class="star star"><span class="star-item on"></span><span class="star-item on"></span><span
+                      class="star-item on"></span><span class="star-item on"></span><span class="star-item half"></span>
+                  </div> <span class="score">4.6</span>
+                </div>
+                <div class="pack-score item"><span class="text">新鲜</span>
+                  <div class="star star"><span class="star-item on"></span><span class="star-item on"></span><span
+                      class="star-item on"></span><span class="star-item on"></span><span class="star-item half"></span>
+                  </div> <span class="score">4.7</span>
+                </div>
+              </div>
+            </div>
+            <div class="overview-right">
+              <div class="delivery-score">
+                <p class="score">95%</p>
+                <p class="text">配送满意度</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 评论 -->
+      <ul class="rating-list">
+
+        <li class="comment-item">
+          <div class="comment-header"><img
+              src="http://p0.meituan.net/aichequan/8632d93a19c8883727301f82cc88501d4301.png.webp">
+            <!---->
+          </div>
+          <div class="comment-main">
+            <div class="userbox flex sb">
+              <div class="user">
+                匿名用户
+              </div>
+              <div class="time">
+                2017.10.08
+              </div>
+            </div>
+            <div class="star-wrapper"><span class="text">评分</span>
+              <div class="star star"><span class="star-item on"></span><span class="star-item on"></span><span
+                  class="star-item on"></span><span class="star-item on"></span><span class="star-item off"></span>
+              </div>
+            </div>
+            <div class="c_content">香芋派的盒子装着菠萝派</div>
+            <div class="img-wrapper">
+              <img src="http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg.webp">
+              <img src="http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg.webp">
+              <img src="http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg.webp">
+              <img src="http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg.webp">
+            </div>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+    <div class="tabItem" style="display:none;">
+      <div class="item">
+        <div class="safety-wrapper" style="background-image: url('./images/shop/place.png');">
+          新疆xxxx
+          <!-- <span class="icon-keyboard_arrow_right"></span> -->
+        </div>
+      </div>
+      <div class="item">
+        <div class="safety-wrapper borderb" style="background-image: url('./images/shop/time.png');">
+          配送时间 : 11:00~20:30
+        </div>
+        <div class="safety-wrapper" style="background-image: url('./images/shop/phone.png');">
+          商家电话 : 12311111111
+        </div>
+      </div>
+      <div class="item">
+        <div class="safety-wrapper" style="background-image: url('./images/shop/hot.png');">
+          商家当前热门活动
+        </div>
+      </div>
+    </div>
+    <div class="mask" style="display:none;"></div>
+    <!-- 选规格 -->
+    <div class="specsBox" style="display:none;">
+      <div class="specs">
+        <div class="title">百果王水果沙拉</div>
+        <div class="size">
+          <h4>尺寸</h4>
+          <div class="items">
+            <div class="item cur">
+              8寸500g
+            </div>
+            <div class="item">
+              10寸600g
+            </div>
+            <div class="item">
+              12寸800g
+            </div>
+            <div class="item">
+              四川麻辣
+            </div>
+            <div class="item">
+              香辣
+            </div>
+          </div>
+        </div>
+        <div class="selected">
+          已选规格：
+          <text class="">
+            8寸500g
+          </text>
+
+        </div>
+        <div class="footer flex sb">
+          <div class="price">
+            <i>￥</i>46
+          </div>
+          <div class="addCart" id="addCart">
+            + 加入购物车
+          </div>
+          <div class="total" style="display:none">
+            <i>-</i>
+            <text class="number">
+              1
+            </text>
+            <i class="joinCar">+</i>
+
+          </div>
+        </div>
+      </div>
+      <!-- 关闭规格窗口 -->
+      <div class="close">
+        x
+      </div>
+    </div>
+    <!-- 商家二维码 -->
+
+    <div class="code" style="display:none;">
+      <img
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587545770037&di=1367014e3609fca7dbb734871efb5ed1&imgtype=0&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D3381390367%2C3810581293%26fm%3D214%26gp%3D0.jpg"
+        alt="">
+    </div>
+    <!-- 购物车查看 -->
+    <div class="cartView" style="display:none;">
+      <div class="head">
+        <text>
+          已享100减25
+        </text>
+      </div>
+      <div class="subhead">
+        <img src="./images/shop/del.png" alt="">
+        清空购物车
+      </div>
+      <div class="con">
+        <ul>
+          <li class="food-item">
+            <div class="pic">
+              <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+            </div>
+            <div class="tatil">
+              <h3>白果王水果沙拉</h3>
+              <div class="subTitle">
+                脆糯营养，口感好
+              </div>
+              <div class="priceBox flex sb">
+                <div class="box flex">
+                  <div class="price"><text>￥</text>45</div>
+                </div>
+                <div class="total">
+                  <i>-</i>
+                  <text class="number">
+                    1
+                  </text>
+                  <i class="joinCar">+</i>
+
+                </div>
+              </div>
+            </div>
+
+          </li>
+          <li class="food-item">
+            <div class="pic">
+              <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+            </div>
+            <div class="tatil">
+              <h3>白果王水果沙拉</h3>
+              <div class="subTitle">
+                脆糯营养，口感好
+              </div>
+              <div class="priceBox flex sb">
+                <div class="box flex">
+                  <div class="price"><text>￥</text>45</div>
+                </div>
+                <div class="total">
+                  <i>-</i>
+                  <text class="number">
+                    1
+                  </text>
+                  <i class="joinCar">+</i>
+
+                </div>
+              </div>
+            </div>
+
+          </li>
+          <li class="food-item">
+            <div class="pic">
+              <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+            </div>
+            <div class="tatil">
+              <h3>白果王水果沙拉</h3>
+              <div class="subTitle">
+                脆糯营养，口感好
+              </div>
+              <div class="priceBox flex sb">
+                <div class="box flex">
+                  <div class="price"><text>￥</text>45</div>
+                </div>
+                <div class="total">
+                  <i>-</i>
+                  <text class="number">
+                    1
+                  </text>
+                  <i class="joinCar">+</i>
+
+                </div>
+              </div>
+            </div>
+
+          </li>
+          <li class="food-item">
+            <div class="pic">
+              <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+            </div>
+            <div class="tatil">
+              <h3>白果王水果沙拉</h3>
+              <div class="subTitle">
+                脆糯营养，口感好
+              </div>
+              <div class="priceBox flex sb">
+                <div class="box flex">
+                  <div class="price"><text>￥</text>45</div>
+                </div>
+                <div class="total">
+                  <i>-</i>
+                  <text class="number">
+                    1
+                  </text>
+                  <i class="joinCar">+</i>
+
+                </div>
+              </div>
+            </div>
+
+          </li>
+          <li class="food-item">
+            <div class="pic">
+              <img src="./images/shop/fa5df0d9047765d892843b1e8521317.png" alt="">
+            </div>
+            <div class="tatil">
+              <h3>白果王水果沙拉</h3>
+              <div class="subTitle">
+                脆糯营养，口感好
+              </div>
+              <div class="priceBox flex sb">
+                <div class="box flex">
+                  <div class="price"><text>￥</text>45</div>
+                </div>
+                <div class="total">
+                  <i>-</i>
+                  <text class="number">
+                    1
+                  </text>
+                  <i class="joinCar">+</i>
+
+                </div>
+              </div>
+            </div>
+
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./lib/adaptation.js"></script>
+
+  <script src="lib/goodsFly.js"></script>
+  <script src="lib/swiper.min.js"></script>
+  <script src="lib/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+  <script>
+    // 数据
+
+
+    // 轮播图
+    var mySwiper = new Swiper('.swiper-container', {
+      loop: true, // 循环模式选项
+    })
+    // 添加商品飞入效果
+    var goods = document.querySelectorAll('.joinCar');
+    var cartshow = true;
+    goods.forEach(function (good, index) {
+
+      good.addEventListener('click', function () {
+        if (cartshow) {
+          $(".noGoods").hide()
+          $(".hasGoods").show()
+          cartshow = false;
+        }
+
+        GoodsFly(this, 'goodsCar')
+
+      })
+
+    })
+
+    // 
+    $(function () {
+      // 收藏
+      $(".collectBefore").click(function () {
+        $(this).hide()
+        $(".collectAfter").show()
+      })
+      $(".collectAfter").click(function () {
+        $(this).hide()
+        $(".collectBefore").show()
+      })
+      // $(window).scroll(function (e) {
+      //   if ($(document).scrollTop() >= $('.nav').offset().top) {
+
+      //     $(".nav").addClass("fixed")
+      //     $(".tabItem").addClass("fixed")
+      //   } else {
+      //     $(".nav").removeClass("fixed")
+      //     $(".tabItem").removeClass("fixed")
+      //   }
+      // });
+      // 联系商家
+      $("#shopping").click(() => {
+        // $(".mask").show()
+        $(".code").show()
+      })
+      $(".code").click(function () {
+        $(this).hide()
+      })
+      $(".mask").click(() => {
+        $(".mask").hide()
+        $(".code").hide()
+        $(".specsBox").hide();
+        $(".cartView").hide()
+        $(".cart").css("z-index", 1002);
+
+
+      })
+      // 左边菜单切换
+
+
+      var scrollArr = []
+      $(".food-list-hook").each(function (index) {
+        scrollArr.push($(this).position().top)
+      })
+      $("ul .menu-item").off("click").on("click", function () {
+        var index = $(this).index();
+
+        $(this).addClass("current").siblings().removeClass("current");
+        $(".outer").animate({ scrollTop: scrollArr[index] }, 300)
+      });
+      $(".outer").scroll(function (e) {
+        var $scroll = $(this).scrollTop();
+        scrollArr.forEach(function (item, index) {
+
+          if (item <= $scroll + 100 && scrollArr[index - 1] > $scroll - 50) {
+
+
+            $('ul .menu-item').removeClass('current');
+            $('ul .menu-item').eq(index).addClass('current');
+            return false;
+
+          }
+        });
+      })
+
+      // nav选项卡切换
+      $("#tabnav a").off("click").on("click", function () {
+        var index = $(this).index();
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".tabItem").hide()
+        $(".tabItem").eq(index).show()
+      });
+      // 规格加入购物车
+      $("#addCart").on('click', function () {
+        $(this).hide();
+        $(".footer .total").show()
+      })
+      $("#select").on("click", function () {
+        $(".specsBox").show();
+        $(".mask").show()
+      })
+      // 关闭规格
+      $(".close").on("click", function () {
+        $(".specsBox").hide();
+        $(".mask").hide()
+      })
+      // 查看购物车
+      $("#showCart").on("click", function () {
+        console.log(1)
+        $(".cart").css("z-index", 1005);
+        $(".cartView").show();
+        $(".mask").show()
+
+      })
+    });
+  </script>
+</body>
+
+</html>

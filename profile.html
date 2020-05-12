@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./lib/reset.css">
+  <link href="./lib/swiper.min.css" <link rel="stylesheet" href="./lib/reset.css">
+  <link rel="stylesheet" href="./profile.css">
+  <link href="./common/css/tabFoot.css" rel="stylesheet">
+  <link href="./goodsDetail.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="content">
+
+    <div class="header">
+      <section class="top flex sb">
+        <div class="logo"><span class="icon iconfont">&#xe604;</span></div>
+        <div class="title">
+          我的
+        </div>
+        <div class="menu">
+          <span class="icon iconfont">&#xe8d0;</span>
+        </div>
+      </section>
+      <div class="proImg">
+        <img src="./images/profile/264005c1132fa0fd839e95d055ca8fe.png" alt="">
+        <text class="">
+          登录/注册
+        </text>
+
+      </div>
+    </div>
+
+    <div class="main pull" style="top:-12%">
+      <div class="box1 flex sb">
+        <div class="money">
+          <p>128.8</p>
+          <p>余额</p>
+        </div>
+        <div class="quan">
+          <p>0</p>
+          <p>优惠券</p>
+        </div>
+        <div class="sore">
+          <p>20</p>
+          <p>积分</p>
+        </div>
+      </div>
+      <div class="box1 box2">
+        <div class="history">
+          <h4>浏览历史</h4>
+          <div class="items flex">
+            <div class="item">
+              <img class="showGoodsDetail" src="./images/profile/items.png" alt="">
+            </div>
+            <div class="item">
+              <img class="showGoodsDetail" src="./images/profile/items.png" alt="">
+            </div>
+            <div class="item">
+              <img class="showGoodsDetail" src="./images/profile/items.png" alt="">
+            </div>
+            <div class="item">
+              <img class="showGoodsDetail" src="./images/profile/items.png" alt="">
+            </div>
+            <div class="item">
+              <img class="showGoodsDetail" src="./images/profile/items.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box3 flex">
+        <div class="iconbox" style="color:#56d0a3">
+
+          <span class="icon iconfont"> &#xe67b;</span>
+
+        </div>
+        <div class="text">
+          <a href="./address.html">地址管理</a>
+        </div>
+      </div>
+      <div class="box3 flex">
+        <div class="iconbox" style="color:#9787fd">
+
+          <span class="icon iconfont"> &#xe650;</span>
+
+        </div>
+        <div class="text">
+          分享
+          <text class="">
+            邀请好友赢10万大奖
+          </text>
+
+        </div>
+      </div>
+      <div class="box3 flex">
+        <div class="iconbox" style="color:#5bb3e6">
+
+          <span class="icon iconfont">&#xe668;</span>
+
+        </div>
+        <div class="text">
+          我的收藏
+        </div>
+      </div>
+      <div class="box3 flex mb10">
+        <div class="iconbox" style="color:#f5d1d2">
+
+          <span class="icon iconfont">&#xe604;</span>
+
+        </div>
+        <div class="text">
+          <a href="./setting.html">设置</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 底部tab选项卡 -->
+  <div class="footTab flex sa">
+    <a class="item" href="./index.html">
+      <p class="img">
+        <img src="./common/images/index.png" alt="" class="normal">
+        <img src="./common/images/index_a.png" alt="" class="active" style="display: none;">
+      </p>
+      <p>
+        首页
+      </p>
+    </a>
+    <a class="item" href="./order.html">
+      <p class="img">
+        <img src="./common/images/order.png" alt="" class="normal">
+        <img src="./common/images/order_a.png" alt="" class="active" style="display: none;">
+      </p>
+      <p>
+        订单
+      </p>
+    </a>
+    <a class="item cur" href="./profile.html">
+      <p class="img">
+        <img src="./common/images/my.png" alt="" class="normal" style="display: none;">
+        <img src="./common/images/my_a.png" alt="" class="active">
+      </p>
+      <p>
+        我的
+      </p>
+    </a>
+  </div>
+  <!-- 商品详情 -->
+  <div class="fixGoods">
+    <div class="wrap">
+      <div class="header">
+        <!-- 选项 -->
+        <div class="topBox flex sb">
+          <div class="l">
+            <p class="reduce">
+              <img src="./images/goodsDetail/pull.png" alt="">
+            </p>
+          </div>
+          <div class="r flex">
+            <p>
+              <img src="./images/goodsDetail/cart.png" alt="">
+            </p>
+            <p>
+              <img src="./images/goodsDetail/more.png" alt="">
+            </p>
+          </div>
+        </div>
+        <!-- 轮播图 -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/goodsDetail/swiper.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/goodsDetail/swiper.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/goodsDetail/swiper.jpg" alt="">
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="header_con">
+          <div class="title">
+            <h4>新疆特色辣子鸡排饭</h4>
+          </div>
+          <div class="tag flex fs10">
+            <div class="item">
+              约800克
+            </div>
+            <div class="item">
+              香辣
+            </div>
+            <div class="item">
+              特色菜
+            </div>
+            <div class="item">
+              营养美食
+            </div>
+          </div>
+          <div class="unit fs10">
+            月售566
+          </div>
+          <div class="action-groups flex sb">
+            <div class="l flex">
+              <div class="price "><text class="fs10">￥</text>45</div>
+              <div class="del fs10">￥14</div>
+              <div class="zhe fs10">
+                5.2折
+              </div>
+            </div>
+            <div class="r fs10" id="select">
+              + 选规格
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="attension flex sb">
+          <div class="l flex fs10">
+            <div class="fan">
+              <i></i>
+              <text> 返</text>
+            </div>
+            <div class="fs10">
+              该商品分享可领49减10红包
+              <img src="./images/goodsDetail/msg.png" alt="">
+            </div>
+          </div>
+          <div class="r fs10">
+            立即分享
+            <img src="./images/goodsDetail/to.png" alt="">
+          </div>
+        </div>
+        <div class="tabnav flex">
+          <div class="nav-item router-link-exact-active active">
+            详情
+            <i class="line"></i></div>
+          <div class="nav-item">
+            评价
+            <i class="line"></i></div>
+          <div class="nav-item">
+            图文
+            <i class="line"></i></div>
+        </div>
+        <div class="detail food-list-hook">
+          <div class="flex">
+            <p>掌柜描述:</p>
+            <P>口味可以自己选,有香辣、蒜香、葱香、孜然、老麻口味</P>
+          </div>
+          <div class="flex">
+            <p>主料:</p>
+            <P>鸡胸排，大葱</P>
+          </div>
+          <div class="flex">
+            <p>菜系:</p>
+            <P>新疆特色菜</P>
+          </div>
+          <div class="flex">
+            <p>口味:</p>
+            <P>香辣</P>
+          </div>
+        </div>
+        <div class="remark food-list-hook">
+          <div class="comment_header flex sb">
+            <div class="l">
+              评价
+              <text>(79%好评度)</text>
+            </div>
+            <div class="r">
+              <text>386</text>条评论
+              <img src="./images/goodsDetail/to_2.png" alt="">
+            </div>
+          </div>
+          <div class="tags fs10">
+            <div class="item">有图 62</div>
+            <div class="item"><img src="./images/goodsDetail/good.png" alt="" class="good"> 62</div>
+            <div class="item"><img src="./images/goodsDetail/bad.png" alt="" class="bad"> 62</div>
+            <div class="item">92%人口味满意</div>
+            <div class="item">300人希望再次购买</div>
+          </div>
+          <ul class="rating-list">
+            <li class="comment-item">
+              <div class="comment-header"><img
+                  src="http://p0.meituan.net/aichequan/8632d93a19c8883727301f82cc88501d4301.png.webp">
+                <!---->
+              </div>
+              <div class="comment-main">
+                <div class="userbox flex sb">
+                  <div class="user">
+                    匿名用户
+                  </div>
+                  <div class="time">
+                    2017.10.08
+                  </div>
+                </div>
+                <div class="star-wrapper fs10">
+                  <img src="./images/goodsDetail/good.png" alt="" class="good">
+                  赞了该商品
+                </div>
+                <div class="c_content">香芋派的盒子装着菠萝派</div>
+                <div class="img-wrapper">
+                  <img src="http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg.webp">
+                  <img src="http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg.webp">
+                  <img src="http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg.webp">
+                  <img src="http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg.webp">
+                </div>
+              </div>
+            </li>
+            <li class="comment-item">
+              <div class="comment-header"><img
+                  src="http://p0.meituan.net/aichequan/8632d93a19c8883727301f82cc88501d4301.png.webp">
+                <!---->
+              </div>
+              <div class="comment-main">
+                <div class="userbox flex sb">
+                  <div class="user">
+                    匿名用户
+                  </div>
+                  <div class="time">
+                    2017.10.08
+                  </div>
+                </div>
+                <div class="star-wrapper fs10">
+                  <img src="./images/goodsDetail/bad.png" alt="" class="bad">
+                  踩了该商品
+                </div>
+
+
+              </div>
+            </li>
+            <li class="comment-item">
+              <div class="comment-header"><img
+                  src="http://p0.meituan.net/aichequan/8632d93a19c8883727301f82cc88501d4301.png.webp">
+                <!---->
+              </div>
+              <div class="comment-main">
+                <div class="userbox flex sb">
+                  <div class="user">
+                    匿名用户
+                  </div>
+                  <div class="time">
+                    2017.10.08
+                  </div>
+                </div>
+
+                <div class="c_content">一般般</div>
+
+              </div>
+            </li>
+          </ul>
+          <div class="rate_total flex fs10">
+            <img src="./images/goodsDetail/09e0b58942356bf76c9b7d33eb9e2e6.png" alt="">
+            <img src="./images/goodsDetail/09e0b58942356bf76c9b7d33eb9e2e6.png" alt="">
+            <img src="./images/goodsDetail/09e0b58942356bf76c9b7d33eb9e2e6.png" alt="">
+            <p class="more"><img src="./images/goodsDetail/more.png" alt=""></p>
+            <p class="con">368条评价</p>
+          </div>
+        </div>
+        <div class="pics food-list-hook">
+          <div class="pic_title flex ">
+            <div class="line"></div>
+            <div>图文详情</div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="topBox topBoxfixed flex sb">
+        <div class="l">
+          <p class="reduce">
+            <img src="./images/goodsDetail/pull_2.png" alt="">
+          </p>
+        </div>
+        <div class="tabnav flex sb" style="width: 200px;">
+          <div class="nav-item router-link-exact-active active">
+            详情
+            <i class="line"></i></div>
+          <div class="nav-item">
+            评价
+            <i class="line"></i></div>
+          <div class="nav-item">
+            图文
+            <i class="line"></i></div>
+        </div>
+        <div class="r flex">
+          <p>
+            <img src="./images/goodsDetail/cart_2.png" alt="">
+          </p>
+          <p>
+            <img src="./images/goodsDetail/more_2.png" alt="">
+          </p>
+        </div>
+      </div>
+      <!-- 选规格 -->
+      <div class="specsBox" style="display:none;">
+        <div class="specs">
+          <div class="title">百果王水果沙拉</div>
+          <div class="size">
+            <h4>尺寸</h4>
+            <div class="items">
+              <div class="item cur">
+                8寸500g
+              </div>
+              <div class="item">
+                10寸600g
+              </div>
+              <div class="item">
+                12寸800g
+              </div>
+              <div class="item">
+                四川麻辣
+              </div>
+              <div class="item">
+                香辣
+              </div>
+            </div>
+          </div>
+          <div class="selected">
+            已选规格：
+            <text class="">
+              8寸500g
+            </text>
+
+          </div>
+          <div class="footer flex sb">
+            <div class="price">
+              <i>￥</i>46
+            </div>
+            <div class="addCart" id="addCart">
+              + 加入购物车
+            </div>
+            <div class="total" style="display:none">
+              <i>-</i>
+              <text class="number">
+                1
+              </text>
+              <i class="joinCar">+</i>
+
+            </div>
+          </div>
+        </div>
+        <!-- 关闭规格窗口 -->
+        <div class="close">
+          x
+        </div>
+      </div>
+      <!-- 商家二维码 -->
+
+      <div class="code" style="display:none;">
+        <img
+          src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587545770037&di=1367014e3609fca7dbb734871efb5ed1&imgtype=0&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D3381390367%2C3810581293%26fm%3D214%26gp%3D0.jpg"
+          alt="">
+      </div>
+      <div class="mask" style="display:none;"></div>
+      <!-- 购物车-->
+      <div class="cart flex">
+        <div class="shopping flex" id="shopping">
+          <p>
+            <img src="./images/shop/shopping.png" alt="">
+          </p>
+          <p>联系商家</p>
+        </div>
+        <div class="total flex">
+          <div class="noGoods">
+            <img src="./images/shop/cart2.png" alt="" class="goodsCar2">
+            另需配送费 ￥0
+          </div>
+          <div class="hasGoods flex" style="display:none">
+            <div class="cartImg" id="showCart">
+              <i class="num goodsCar">1</i>
+              <img src="./images/shop/cart.png" alt="" class="">
+            </div>
+            <div class="price">
+              <p>￥732</p>
+
+              <p>另需配送费￥0</p>
+            </div>
+            <div class="sum">
+              <a href="./pay.html">去结算</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./lib/adaptation.js"></script>
+
+<script src="./lib/swiper.min.js"></script>
+
+<script src="./lib/jquery.min.js"></script>
+
+<script>
+  // console.log(document.getElementById('iframe1').contentWindow.document.getElementById('reduce'))
+  var w = 0, h = 0;
+  var scrollArr = [];
+  $('.showGoodsDetail').click(function () {
+    $(".fixGoods").fadeIn()
+    $(".cart").show()
+    var time = setInterval(function () {
+
+      if (w == 100 && h == 100) {
+        w = 100; h = 100;
+        clearInterval(time)
+        // 选项卡
+
+        if (scrollArr.length == 0) {
+          console.log()
+          let t = 130/$("html").css('font-size').slice(0,2)
+          $(".food-list-hook").each(function (index) {
+            scrollArr.push($(this).position().top -t)
+          })
+
+        }
+        // console.log(scrollArr)
+        $(".nav-item").off("click").on("click", function () {
+          var index = $(this).index();
+
+          $(this).addClass("active").siblings().removeClass("active");
+          $(".wrap").animate({ scrollTop: scrollArr[index] }, 300)
+          $('.topBoxfixed .tabnav .nav-item').removeClass('active');
+          $('.topBoxfixed .tabnav .nav-item').eq(index).addClass('active');
+        });
+
+        var opc = 0;
+        // console.log()
+        var actionGroup = $(".action-groups").offset().top;
+        $(".wrap").scroll(function () {
+          var $scroll = $(".wrap").scrollTop();
+          scrollArr.forEach(function (item, index) {
+
+            if (item >= $scroll + 70 && scrollArr[index - 1] < $scroll) {
+              $('.topBoxfixed .tabnav .nav-item').removeClass('active');
+              $('.topBoxfixed .tabnav .nav-item').eq(index).addClass('active');
+
+              $('.main .tabnav .nav-item').removeClass('active');
+              $('.main .tabnav .nav-item').eq(index).addClass('active');
+              return false;
+            }
+          });
+          if ($scroll >= actionGroup) {
+            $(".action-groups").css({
+              "position": "fixed",
+              "left": 0,
+              "right": 0,
+              "top": "4.625rem",
+              "background": "#fff",
+              "padding": " 0.8125rem",
+              "z-index": 99
+            })
+          } else {
+            $(".action-groups").css({
+              "position": "static",
+              "left": 0,
+              "right": 0,
+              "top": "0",
+              "background": "#fff",
+              "padding": " 0"
+            })
+          }
+          if ($(".wrap").scrollTop() >= 1) {
+
+            opc += 0.1
+            if (opc >= 1) {
+              opc = 1
+            }
+            $(".topBoxfixed").css({ "opacity": opc, "position": "fixed" })
+          } else if ($(".wrap").scrollTop() == 0) {
+
+            $(".topBoxfixed").css({ "opacity": 0, "position": "static" });
+            $('.topBoxfixed .tabnav .nav-item').removeClass('active');
+            $('.topBoxfixed .tabnav .nav-item').eq(0).addClass('active');
+
+            $('.main .tabnav .nav-item').removeClass('active');
+            $('.main .tabnav .nav-item').eq(0).addClass('active');
+          } else {
+
+            if (opc == 0) {
+              opc = 0
+            }
+            opc -= 0.1;
+            $(".topBoxfixed").css({ "opacity": opc, "position": "fixed" })
+          }
+        })
+
+        return;
+      }
+      w += 10;
+      h += 10;
+
+      $('.fixGoods,.wrap').css({
+        "width": w + "vw",
+        "height": h + "vh"
+      })
+    }, 10)
+  })
+  // 上拉刷新
+  var pull = document.querySelector('.pull');
+  var outerScroller = document.querySelector('body');
+
+  var touchStart = 0;
+  var pulltop = parseInt(pull.style.top) * 0.01 * 660;
+  // console.log(pulltop)
+  outerScroller.addEventListener('touchstart', function (event) {
+    var touch = event.targetTouches[0];
+    // 把元素放在手指所在的位置
+    touchStart = touch.pageY;
+
+  }, false);
+
+  outerScroller.addEventListener('touchmove', function (event) {
+    var touch = event.targetTouches[0].pageY;
+
+    if (touch > touchStart) {
+      var alltop = touch.pageY - touchStart;
+      // console.log(alltop)
+      if (alltop <= -20) {
+        pull.style.top = alltop + 'px';
+      } else {
+        pull.style.top = -20 + 'px';
+      }
+
+    }
+  }, false);
+  outerScroller.addEventListener('touchend', function (event) {
+
+    touchStart = 0;
+    var scrolltop = pulltop;
+
+    setTimeout(function () {
+      var time = setInterval(function () {
+        scrolltop = scrolltop + 2;
+        pull.style.top = scrolltop + 'px';
+        if (pull.offsetTop >= pulltop) {
+          clearInterval(time);
+        }
+      }, 10)
+    }, 1000)
+
+  }, false);
+
+</script>
+<script>
+
+  // console.log($(".reduce"))
+  $(".reduce").on("click", function () {
+    $(".cart").hide()
+
+    var time2 = setInterval(function () {
+
+      w -= 10;
+      h -= 10;
+      if (w == 0 && h == 0) {
+        w = 0; h = 0;
+        clearInterval(time2)
+        return;
+      }
+
+
+      $('.fixGoods,.wrap').css({
+        "width": w + "vw",
+        "height": h + "vh",
+
+      })
+
+    }, 10)
+    $(".fixGoods").fadeOut()
+
+  })
+  $("#select").on("click", function () {
+    $(".specsBox").show();
+    $(".mask").show()
+  })
+  $(".mask").click(() => {
+    $(".mask").hide()
+    $(".code").hide()
+    $(".specsBox").hide();
+  })
+  // 关闭规格
+  $(".close").on("click", function () {
+    $(".specsBox").hide();
+    $(".mask").hide()
+  })
+  // 联系商家
+  $("#shopping").click(() => {
+    // $(".mask").show()
+    $(".code").show()
+  })
+  $(".code").click(function () {
+    $(this).hide()
+  })
+
+  // 轮播图
+  var mySwiper = new Swiper('.swiper-container', {
+    loop: true, // 循环模式选项
+    autoplay: {
+      delay: 5000,//1秒切换一次
+    },
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+
+    },
+  })
+
+</script>
+
+</html>

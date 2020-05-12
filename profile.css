@@ -1,0 +1,178 @@
+@charset "UTF-8";
+ @font-face {
+     font-family: "iconfont";
+     src: url("./icon/iconfont.ttf") format("truetype");
+}
+ .iconfont {
+     font-family: "iconfont" !important;
+     font-size: 1rem;
+     font-style: normal;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+ .icon-qianbao:before {
+     content: "\e608";
+}
+ .icon-dingdan:before {
+     content: "\e5b3";
+}
+ .icon-tongzhi:before {
+     content: "\e680";
+}
+ .icon-shouhuo:before {
+     content: "\e60b";
+}
+ .icon-dizhi:before {
+     content: "\e67b";
+}
+ .icon-xiaoxi:before {
+     content: "\e8d0";
+}
+ .icon-xiaoxi1:before {
+     content: "\e609";
+}
+ .icon-wodeshoucang:before {
+     content: "\e668";
+}
+ .icon-xiaoxixinxihuihuahuida:before {
+     content: "\e6f2";
+}
+ .icon-urbantubiao-:before {
+     content: "\e678";
+}
+ .icon-qianbao1:before {
+     content: "\e605";
+}
+ .icon-icon-test:before {
+     content: "\e501";
+}
+ .icon-fenxiang:before {
+     content: "\e650";
+}
+ .icon-shezhi:before {
+     content: "\e604";
+}
+ * {
+     margin: 0;
+     padding: 0;
+}
+ img {
+     vertical-align: middle;
+}
+ body {
+     height: 100vh;
+     position: relative;
+}
+ .content {
+     height: 100%;
+     background-size: cover;
+     background-color: #f5f5f5;
+    /* 顶部 */
+}
+ .content .flex {
+     display: flex;
+     flex-direction: row;
+}
+ .content .sb {
+     justify-content: space-between;
+}
+ .content .header {
+     height: 15.625rem;
+     padding: 0 1.25rem;
+     background: url(./images/profile//proBg.jpg) 100% 100% no-repeat;
+     background-size: cover;
+}
+ .content .header .top {
+     align-items: center;
+     padding: 2.75rem 0rem 0;
+     color: #fff;
+     margin-top: 0rem;
+}
+ .content .header .logo {
+     width: 4.5rem;
+     height: 1.2rem;
+}
+ .content .header .menu {
+     width: 1.2rem;
+     height: 1.2rem;
+     background-size: contain;
+}
+ .content .header .title {
+     width: 4rem;
+     height: 1.2rem;
+}
+ .content .proImg img {
+     width: 4rem;
+     height: 4rem;
+     border-radius: 50%;
+}
+ .content .proImg text {
+     font-weight: 600;
+}
+ .content .main {
+     height: calc(100vh - 10.625rem);
+     background: url(./images/profile/probg.png) no-repeat;
+     background-size: cover;
+     padding: 4% 4% 0;
+     background-position: center -4.375rem;
+     position:relative;
+}
+ .content .main .box1 {
+     text-align: center;
+     padding: 0.9375rem 2.5rem;
+     background: #fff;
+     margin: 0.625rem 0;
+}
+ .content .main .box1 div p:last-child {
+     font-size: 0.75rem;
+     color: #63676a;
+     margin-top: 0.625rem;
+}
+ .content .main .box2 {
+     text-align: left;
+     padding: 0.9375rem 0.9375rem 0;
+     margin-bottom: 0;
+}
+ .content .main .box2 h4 {
+     font-weight: normal;
+     margin-bottom: 1.125rem;
+}
+ .content .main .box2 .items {
+     overflow-x: scroll;
+}
+ .content .main .box2 .items .item img {
+     width: 5rem;
+     height: 5rem;
+     border-radius: 0.3125rem;
+     margin-right: 0.5625rem;
+}
+ .content .main .box3 {
+     background: #fff;
+}
+ .content .main .box3 .iconbox {
+     padding: 0.9375rem 0rem 0.9375rem 0.9375rem;
+}
+ .content .main .box3 .text {
+     flex: 1;
+     padding: 0.9375rem;
+     border-bottom: 0.0625rem solid #f3f3f3;
+     margin-left: 0.75rem;
+}
+ .content .main .box3 .text text {
+     float: right;
+     color: #97969b;
+}
+ .mb10 {
+     margin-bottom: 0.625rem;
+}
+/* 弹出商品详情 */
+ .fixGoods{
+     position: fixed;
+     left: 50%;
+     top: 50%;
+     border: none;
+     transform: translate(-50%,-50%);
+     z-index: 10000;
+     display: none;
+}
+ 

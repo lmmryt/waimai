@@ -1,0 +1,94 @@
+.wrap {
+  main {
+    background: #f5f9fc;
+    padding: 12px;
+    .tab {
+      margin: 10px 0;
+      text-align: center;
+      .item {
+        width: 33.33%;
+        font-size: 11px;
+        p {
+          margin-top: 10px;
+        }
+      }
+    }
+    .all {
+      height: 50px;
+      line-height: 50px;
+      font-size: 15px;
+      .r {
+        font-size: 10px;
+      }
+    }
+    .quanItem {
+      padding: 18px 23px;
+      align-items: center;
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      .l {
+      align-items: center;
+
+        .price {
+          color: #f0a622;
+          text-align: center;
+          margin-right: 20px;
+          .title {
+            font-size: 20px;
+            color: #ff4b13;
+            i {
+              font-style: normal;
+              font-size: 10px;
+            }
+          }
+          .con {
+            margin-top: 12px;
+            font-size: 10px;
+          }
+        }
+        .time {
+          font-size: 13px;
+          p:first-child {
+            color: #303030;
+          }
+          p:nth-child(2) {
+            margin-top: 12px;
+            color: #f0a622;
+          }
+          p:last-child {
+            margin-top: 12px;
+
+            color: #adadad;
+            font-size: 10px;
+          }
+        }
+      }
+      .r {
+        width: 68px;
+        height: 26px;
+        border-radius: 13px;
+        font-size: 10px;
+        line-height: 26px;
+        text-align: center;
+        background: linear-gradient(to right, #fe8f09, #ff5f1f);
+        color: #fff;
+      }
+    }
+  }
+}
+
+.wrap .header {
+  align-items: center;
+  padding: 47px 10px 13px;
+  position: relative;
+  text-align: center;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #fee332, #ffc50f);
+  font-size: 16px;
+}
+
+.wrap .header .back {
+  position: absolute;
+  left: 10px;
+}

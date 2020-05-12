@@ -1,0 +1,60 @@
+.content {
+  position: fixed;
+  bottom: 1.125rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.875rem;
+}
+.content .view {
+  width: 100%;
+  padding: 1.125rem;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 0.9375rem;
+  box-shadow: 0.1875rem 0.375rem 0.75rem #cccccc;
+}
+.content .view .footer {
+  margin-top: 0.9375rem;
+}
+.content .view .footer .l img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+.content .view .footer .r .msg {
+  margin-right: 0.9375rem;
+}
+.content .view .footer .r .msg img {
+  width: 2.125rem;
+}
+.content .view .footer .r img {
+  width: 1.375rem;
+}
+.content .view .header {
+  border-bottom: 0.0625rem solid #cacaca;
+  padding-bottom: 1.125rem;
+}
+.content .view .header .r {
+  width: 5.9375rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  background: #fec107;
+  color: #fff;
+  border-radius: 0.3125rem;
+  text-align: center;
+}
+.content .view .header .l p:first-child {
+  font-weight: 600;
+  margin-bottom: 0.9375rem;
+}
+.content .view .header .l p:last-child {
+  font-size: 0.75rem;
+}
+.content .view .header .l p:last-child img {
+  margin-right: 0.375rem;
+}
+.content .view .header .l p:last-child text {
+  margin-left: 0.25rem;
+  color: #368fcd;
+}

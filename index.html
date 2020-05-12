@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link href="./lib/swiper.min.css" rel="stylesheet">
+  <link href="./lib/reset.css" rel="stylesheet">
+  <link href="./common/css/tabFoot.css" rel="stylesheet">
+  <style>
+    body {
+
+      background: #f8f8f8;
+    }
+
+    .content {
+      height: 100%;
+      overflow: hidden;
+
+    }
+
+    .content .header {
+      background-image: linear-gradient(to right, #fee332, #ffc50f);
+      height: 3.3125rem;
+      padding: 1.875rem .9375rem 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .content .header .proImg {
+      border-radius: 50%;
+    }
+
+    .content .header .proImg img {
+      width: 1.875rem;
+      height: 1.875rem;
+
+    }
+
+    .content .header .address {
+      display: flex;
+    }
+
+    .content .header .address img {
+      vertical-align: middle;
+    }
+
+    .content .header .address .place {
+      font-size: 1rem;
+      margin-right: 1.25rem;
+
+    }
+
+    .content .main {
+      top: -0.9375rem;
+      border-radius: 1.125rem 1.125rem 0 0;
+      background: #f8f8f8;
+      position: relative;
+      padding: 0 .9375rem;
+      height: calc(100% - 5.3125rem);
+      padding-bottom: 3.125rem;
+    }
+
+    .content .main .search {
+      z-index: 99;
+      padding-top: .9375rem;
+      position: relative;
+    }
+
+    .content .main .search img {
+      position: absolute;
+      left: .9375rem;
+      top: 1.4375rem;
+    }
+
+    .content .main .search input {
+      border: none;
+      background: #eee;
+      width: calc(100% - 2.1875rem);
+      height: 2rem;
+      border-radius: 1rem;
+      padding-left: 2.1875rem;
+      color: #858585;
+      font-size: 1rem;
+
+    }
+
+    .content .main .history {
+      padding: .625rem 0 1.125rem 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .content .main .history div {
+      height: 1.25rem;
+      line-height: 1.25rem;
+      padding: .3125rem;
+      background: #eee;
+      font-size: .625rem;
+      color: #6b6b6b;
+      border-radius: .6875rem;
+      margin-right: .625rem;
+    }
+
+    .content .main .history div:last-child {
+      margin-right: 0;
+    }
+
+    .content .tab {
+      border-radius: .625rem;
+      padding: .75rem .5rem 1rem .5rem;
+      display: flex;
+      justify-content: space-between;
+      background: #fff;
+      font-size: .75rem;
+      color: #333;
+    }
+
+    .content .tab .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .content .tab .item img {
+      height: 2.375rem;
+      width: 2.375rem;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-bottom: .75rem;
+    }
+
+    /* 轮播图 */
+    .swiper-container {
+      height: 7.25rem;
+      border-radius: .625rem;
+      margin-top: .6875rem;
+    }
+
+    .swiper-container img {
+      width: 100%;
+      height: 7.25rem;
+    }
+
+    .tabclick {
+      margin: 1.6875rem 0 1.375rem 0;
+
+    }
+
+    .tabclick .tabbar {
+      overflow: hidden;
+      margin-bottom: 1.375rem;
+    }
+
+    .tabclick .tabbar .item {
+      margin-right: 1.0625rem;
+      color: #222;
+      font-size: .75rem;
+      float: left;
+    }
+
+    .tabclick .tabbar .item.active {
+      color: #373737;
+      font-weight: 600;
+    }
+
+    .tabclick .tabcon {
+     margin-left: -1.25rem;
+     margin-right: -1.25rem;
+     margin-bottom: 0.8125rem;
+}
+ .tabclick .tabcon .item {
+     padding: 1rem 0;
+     display: block;
+     font-size: 0.75rem;
+     color: #999;
+     margin-top: 0.9375rem;
+     background: #fff;
+}
+ .tabclick .tabcon .item .head {
+     display: flex;
+     padding: 0 1.25rem;
+}
+ .tabclick .tabcon .item .head .pic {
+     width: 4.25rem;
+     height: 3.25rem;
+     border-radius: 0.3125rem;
+     margin-right: 0.625rem;
+}
+ .tabclick .tabcon .item .head .pic img {
+     width: 100%;
+     height: 100%;
+}
+ .tabclick .tabcon .item .head .shop {
+     flex: 1 
+}
+ .tabclick .tabcon .item .head .shop h3 {
+     font-size: 0.875rem;
+     color: #333;
+}
+ .tabclick .tabcon .item .head .shop .starbox {
+     position: relative;
+     margin: 0.3125rem 0;
+}
+ .tabclick .tabcon .item .head .shop .starbox div.star {
+     color: #f9cc49;
+     margin-right: 0.75rem;
+}
+ .tabclick .tabcon .item .head .shop .starbox div {
+     display: inline-block;
+     color: #949494;
+}
+ .tabclick .tabcon .item .head .shop .starbox div:last-child {
+     float: right;
+}
+ .tabclick .tabcon .item .head .shop .starbox div:last-child img {
+     width: 0.625rem;
+     height: 0.75rem;
+     position: relative;
+     bottom: 0.125rem;
+     margin-right: 0.375rem;
+}
+ .tabclick .tabcon .item .head .shop .other {
+     display: flex;
+     color: #949494;
+}
+ .tabclick .tabcon .item .head .shop .other .qisong {
+     margin-right: 0.75rem;
+}
+ .tabclick .tabcon .item .scroll {
+     overflow-x: scroll;
+     overflow-y: hidden;
+     display: flex;
+     margin-top: 0.9375rem;
+     padding-right: 1.25rem;
+}
+ .tabclick .tabcon .item .scroll .block {
+     width: 5.9375rem;
+     flex-shrink: 0;
+}
+ .tabclick .tabcon .item .scroll .scrollItem {
+     margin-right: 0.75rem;
+}
+ .tabclick .tabcon .item .scroll .scrollItem .pic {
+     border-radius: 0.3125rem;
+     width: 4.75rem;
+     height: 3.625rem;
+     background: #f1f1f1;
+     position: relative;
+     text-align: center;
+}
+ .tabclick .tabcon .item .scroll .scrollItem .pic i {
+     font-style: normal;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     display: inline-block;
+     padding: 0.3125rem 0.25rem;
+     background: #ff5523;
+     color: #fff;
+     border-radius: 0.3125rem;
+}
+ .tabclick .tabcon .item .scroll .scrollItem .pic img {
+     width: 3.625rem;
+     height: 3.625rem;
+}
+ .tabclick .tabcon .item .scroll .scrollItem .con h2 {
+     width: 4.75rem;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     font-size: 1rem;
+     font-weight: 400;
+     color: #4b4b4b;
+     margin: 0.5625rem 0;
+}
+ .tabclick .tabcon .item .scroll .scrollItem .con .priceBox {
+     font-size: 0.75rem;
+     display: flex;
+}
+ .tabclick .tabcon .item .scroll .scrollItem .con .priceBox .price {
+     color: #fd5a1c;
+}
+ .tabclick .tabcon .item .scroll .scrollItem .con .priceBox .price text {
+     font-size: 1rem;
+     margin-right: 0.3125rem;
+}
+ .tabclick .tabcon .item .scroll .scrollItem .con .priceBox .del {
+     text-decoration: line-through;
+     position: relative;
+     bottom: -0.1875rem;
+}
+ .footer {
+     color: #cfcfcf;
+     font-size: 0.75rem;
+     text-align: center;
+     position: relative;
+     margin: 1.875rem 0 1.25rem;
+}
+ .footer .hr {
+     display: block;
+     content: "";
+     width: 100%;
+     position: absolute;
+     top: 50%;
+     border-top: 0.0625rem solid #cfcfcf;
+}
+ .footer span {
+     background: #f8f8f8;
+     font-size: inherit;
+     position: relative;
+     padding: 0 .3rem;
+}
+ .fixed {
+     width: 100% ;
+     box-sizing: border-box;
+     /* height: 2.5rem; */
+     padding: 0.9375rem .9375rem;
+     background: #fff;
+     position: fixed !important;
+     top: 0;
+     left: 0;
+}
+.fixed input{
+  width: 100%;
+}
+.fixed img{
+  left: 1.875rem!important;
+}
+    /* 更多 */
+    .loading {
+      text-align: center;
+      color: #4b4b4b;
+    }
+
+    .loadImg {
+      animation: rotate 1s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg)
+      }
+
+      to {
+        transform: rotate(359deg)
+      }
+    }
+
+    .pull {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="header">
+      <div class="proImg">
+        <img src="./images/index/proImg.png" alt="">
+      </div>
+      <div class="address">
+        <div class="place">
+          <img src="./images/index/icon-test.png" alt="">
+          <text>
+            幸福家园
+          </text>
+
+          <img src="./images/index/right.png" alt="">
+        </div>
+        <div class="tongzhi">
+          <img src="./images/index/tongzhi.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="search " id="search">
+        <img src="./images/index/search.png" alt="">
+        <input type="text" placeholder="输入搜索关键词">
+      </div>
+      <div class="history">
+        <div>红烧排骨</div>
+        <div>飞过肉</div>
+        <div>野生大菠萝</div>
+        <div>红烧排骨</div>
+        <div>西红柿鸡蛋汤</div>
+      </div>
+
+      <div class="pull">
+        <!-- 加载中 -->
+        <div class="loading2 loading" style="display: none;margin-bottom: 15px;">
+          <img src="./images/index/loading.png" alt="" class="loadImg">
+          加载中...
+        </div>
+        <div class="tab">
+          <a class="item" href="/">
+            <img src="./images/index/market.png" alt="">
+
+            <p>超市百货 </p>
+          </a>
+          <a class="item" href="/">
+            <img src="./images/index/vegetable.png" alt="">
+
+            <p>绿色果蔬 </p>
+          </a>
+          <a class="item" href="/">
+            <img src="./images/index/fruit.png" alt="">
+
+            <p>生鲜鱼肉 </p>
+          </a>
+          <a class="item" href="/">
+            <img src="./images/index/flour.png" alt="">
+
+            <p>鲜花礼品 </p>
+          </a>
+          <a class="item" href="/">
+            <img src="./images/index/drag.png" alt="">
+
+            <p>送药到家</p>
+          </a>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/index/swiper.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/index/swiper.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="tabclick">
+          <div class="tabbar" id="tabbar">
+            <div class="item active">
+              附近商户
+            </div>
+            <div class="item">
+              销量
+            </div>
+            <div class="item">
+              速度
+            </div>
+            <div class="item">
+              配送费
+            </div>
+          </div>
+          <div class="tabcon">
+            <a class="item" href='./shop.html'>
+              <div class="head">
+                <div class="pic">
+                  <img src="./images/index/f5af52015eed7f27aaaca276ab23eb2.png" alt="">
+                </div>
+                <div class="shop">
+                  <h3>田东日式料理（秦阳店）</h3>
+                  <div class="starbox">
+                    <div class="star">
+                      <img src="./images/index/star.png" alt="">
+                      4.8
+                    </div>
+                    <div class="mall">
+                      月销<text>356</text>
+                    </div>
+                    <div class="ding">
+                      <img src="./images/index/icon-test.png" alt="">
+                      500
+                    </div>
+                  </div>
+                  <div class="other">
+                    <div class="qisong">
+                      起送￥6
+                    </div>
+                    <div class="peisong">
+                      配送￥6
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="scroll">
+                <div class="block"></div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉小羊肉 </h2>
+
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="item" href='./shop.html'>
+              <div class="head">
+                <div class="pic">
+                  <img src="./images/index/f5af52015eed7f27aaaca276ab23eb2.png" alt="">
+                </div>
+                <div class="shop">
+                  <h3>田东日式料理（秦阳店）</h3>
+                  <div class="starbox">
+                    <div class="star">
+                      <img src="./images/index/star.png" alt="">
+                      4.8
+                    </div>
+                    <div class="mall">
+                      月销<text>356</text>
+                    </div>
+                    <div class="ding">
+                      <img src="./images/index/icon-test.png" alt="">
+                      500
+                    </div>
+                  </div>
+                  <div class="other">
+                    <div class="qisong">
+                      起送￥6
+                    </div>
+                    <div class="peisong">
+                      配送￥6
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="scroll">
+                <div class="block"></div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉小羊肉 </h2>
+
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="item" href='./shop.html'>
+              <div class="head">
+                <div class="pic">
+                  <img src="./images/index/f5af52015eed7f27aaaca276ab23eb2.png" alt="">
+                </div>
+                <div class="shop">
+                  <h3>田东日式料理（秦阳店）</h3>
+                  <div class="starbox">
+                    <div class="star">
+                      <img src="./images/index/star.png" alt="">
+                      4.8
+                    </div>
+                    <div class="mall">
+                      月销<text>356</text>
+                    </div>
+                    <div class="ding">
+                      <img src="./images/index/icon-test.png" alt="">
+                      500
+                    </div>
+                  </div>
+                  <div class="other">
+                    <div class="qisong">
+                      起送￥6
+                    </div>
+                    <div class="peisong">
+                      配送￥6
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="scroll">
+                <div class="block"></div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉小羊肉 </h2>
+
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="item" href='./shop.html'>
+              <div class="head">
+                <div class="pic">
+                  <img src="./images/index/f5af52015eed7f27aaaca276ab23eb2.png" alt="">
+                </div>
+                <div class="shop">
+                  <h3>田东日式料理（秦阳店）</h3>
+                  <div class="starbox">
+                    <div class="star">
+                      <img src="./images/index/star.png" alt="">
+                      4.8
+                    </div>
+                    <div class="mall">
+                      月销<text>356</text>
+                    </div>
+                    <div class="ding">
+                      <img src="./images/index/icon-test.png" alt="">
+                      500
+                    </div>
+                  </div>
+                  <div class="other">
+                    <div class="qisong">
+                      起送￥6
+                    </div>
+                    <div class="peisong">
+                      配送￥6
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="scroll">
+                <div class="block"></div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉小羊肉 </h2>
+
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="scrollItem">
+                  <div class="pic">
+                    <img src="./images/index/9db12969f426255fb23dd2e95113eac.png" alt="">
+                    <i>推荐</i>
+                  </div>
+                  <div class="con">
+                    <h2>小羊肉</h2>
+                    <div class="priceBox">
+                      <div class="price">￥<text>45</text></div>
+                      <div class="del">
+                        ￥<text>65</text>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 加载中 -->
+        <div class="loading loadmore" style="display: none;">
+          <img src="./images/index/loading.png" alt="" class="loadImg">
+          加载中...
+        </div>
+        <div class="footer">
+          <div class="hr"></div>
+          <span>更多商家加入中，敬请期待</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- 底部tab选项卡 -->
+  <div class="footTab flex sa">
+    <a class="item cur" href="./index.html">
+      <p class="img">
+        <img src="./common/images/index.png" alt="" class="normal" style="display: none;">
+        <img src="./common/images/index_a.png" alt="" class="active">
+      </p>
+      <p>
+        首页
+      </p>
+    </a>
+    <a class="item" href="./order.html">
+      <p class="img">
+        <img src="./common/images/order.png" alt="" class="normal">
+        <img src="./common/images/order_a.png" alt="" class="active" style="display: none;">
+      </p>
+      <p>
+        订单
+      </p>
+    </a>
+    <a class="item" href="./profile.html">
+      <p class="img">
+        <img src="./common/images/my.png" alt="" class="normal">
+        <img src="./common/images/my_a.png" alt="" class="active" style="display: none;">
+      </p>
+      <p>
+        我的
+      </p>
+    </a>
+  </div>
+
+  <script src="./lib/adaptation.js"></script>
+
+  <script src="./lib/swiper.min.js"></script>
+  <script src="./lib/jquery.min.js"></script>
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      loop: true, // 循环模式选项
+      autoplay: {
+        delay: 1000,//1秒切换一次
+      }
+    })
+
+    $(function () {
+      $("#tabbar div").off("click").on("click", function () {
+        var index = $(this).index();
+        $(this).addClass("active").siblings().removeClass("active");
+
+      });
+
+
+    });
+
+    // 搜索fixed
+    var flag = true;
+    var showMore = true;
+    $(window).scroll(function (event) {
+      var topScroll = $(document).scrollTop();
+      if (topScroll <= 10) {
+
+        //当滚动距离小于250的时候执行下面的内容，也就是让导航栏恢复原状    
+        $("#search").removeClass("fixed")
+
+      } else {
+
+        //当滚动距离大于250px时执行下面的东西
+        $("#search").addClass("fixed")
+
+      }
+
+      var scrollh = $(document).height();
+      var scrollTop = Math.max(document.documentElement.scrollTop || document.body.scrollTop);
+
+      if ((scrollTop + $(window).height()) >= scrollh * 0.8 && showMore == true) {
+        $(".loadmore").show();
+        showMore = false;
+        console.log(1)
+        var interval = setTimeout(function () {
+          $(".loadmore").hide();
+        }, 1000);
+        var inter = setTimeout(function () {
+
+        }, 1000);
+      }
+
+    })
+
+    //滚动的距离,距离顶部的距离
+    // console.log(topScroll)
+
+    // 上拉刷新
+    var pull = document.querySelector('.pull');
+    var outerScroller = document.querySelector('body');
+
+    var touchStart = 0;
+    var pulltop = pull.offsetTop;
+
+    outerScroller.addEventListener('touchstart', function (event) {
+      var touch = event.targetTouches[0];
+      // 把元素放在手指所在的位置
+      touchStart = touch.pageY;
+
+    }, false);
+
+    outerScroller.addEventListener('touchmove', function (event) {
+      var touch = event.targetTouches[0].pageY;
+
+      if (touch > touchStart) {
+        var alltop = touch.pageY - touchStart;
+        // console.log(alltop)
+        $(".loading2").show()
+        if (alltop <= 50) {
+          pull.style.top = alltop + 'px';
+        } else {
+          pull.style.top = 50 + 'px';
+        }
+
+      }
+    }, false);
+    outerScroller.addEventListener('touchend', function (event) {
+
+      touchStart = 0;
+      var scrolltop = pulltop;
+      setTimeout(function () {
+        var time = setInterval(function () {
+          scrolltop = scrolltop - 2;
+          pull.style.top = scrolltop + 'px';
+          if (pull.offsetTop <= pulltop) {
+            clearInterval(time);
+            $(".loading2").hide()
+          }
+        }, 1)
+      }, 2000)
+
+    }, false);
+
+  </script>
+</body>
+
+</html>

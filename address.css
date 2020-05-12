@@ -1,0 +1,80 @@
+@charset "UTF-8";
+ .wrap {
+     width: 100vw;
+     height: 100vh;
+     background: #f3f3f3;
+     position: relative;
+     box-sizing: border-box;
+}
+ .wrap .forms {
+     width: 90%;
+     background: #fff;
+     margin: 0 auto;
+     border-radius: 0.625rem;
+     box-shadow: 0 0 0.1875rem #ccc;
+     margin-top: 1.875rem;
+}
+ .wrap .forms ul li {
+     padding: 1.25rem 0.9375rem;
+     box-sizing: border-box;
+     width: 100%;
+     border-bottom: 0.0625rem solid #ccc;
+}
+ .wrap .forms ul li .l .title i {
+     font-size: 0.625rem;
+     width: 2.1875rem;
+     height: 1.0625rem;
+     text-align: center;
+     font-style: normal;
+     line-height: 1.0625rem;
+     display: inline-block;
+     color: #f7ba2d;
+     border: 1px solid #f7ba2d;
+     box-sizing: border-box;
+     margin-right: 0.3125rem;
+}
+ .wrap .forms ul li .l .title text {
+     color: #333;
+}
+ .wrap .forms ul li .l .con {
+     margin-top: 0.8125rem;
+     color: #999;
+}
+ .wrap .forms ul li .l .con p:first-child {
+     margin-right: 0.9375rem;
+}
+ .wrap .submit {
+     width: 90%;
+     height: 2.6875rem;
+     position: absolute;
+     bottom: 0.5625rem;
+     left: 5%;
+     display: flex;
+}
+ .wrap .submit .btn1 {
+     width: 100%;
+     height: 2.6875rem;
+     background-image: linear-gradient(to right, #fee332, #ffc50f);
+     border: none;
+     border-radius: 0.625rem;
+     font-weight: 800;
+     font-family: "微软雅黑";
+     font-size: 0.8125rem;
+}
+/* 返回 */
+ .header{
+     position: relative;
+     padding-top: 1.875rem;
+     padding-left: 0.875rem;
+}
+ .back {
+    /* position: absolute;
+     top: 2.875rem;
+     left: 0.625rem;
+     z-index: 999;
+     */
+}
+ .header .back img{
+     margin-right: 1rem;
+}
+ 

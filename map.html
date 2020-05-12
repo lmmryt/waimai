@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./lib/reset.css">
+  <link rel="stylesheet" href="./map.css">
+
+
+  <style type="text/css">
+    
+  </style>
+</head>
+
+<body>
+  <div id="map">
+    <div style="width: 100vw; height: 100vh;" id="allmap"></div>
+  </div>
+  <div class="content">
+    <div class="view">
+      <div class="header flex sb">
+        <div class="l">
+          <p>骑手正在送货</p>
+          <p><img src="./images/map/time.png" alt="">预计送达<text>19:30</text></p>
+        </div>
+        <div class="r">确认收货</div>
+      </div>
+      <div class="footer flex sb">
+        <div class="l flex">
+          <img src="./images/map/42d5a659d5c2ee1c6d47743f275a36a.png" alt="">
+          <p>满意度:<text>100%</text></p>
+        </div>
+        <div class="r flex">
+          <!-- 调短信 -->
+          <div class="msg">
+            <img src="./images/map/msg.png" alt="">
+          </div>
+          <!-- 调电话 -->
+          <div class="phone">
+            <img src="./images/map/phone.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="./lib/adaptation.js"></script>
+
+<script type="text/javascript" src="./lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=67jMQ5DmYTe1TLMBKFUTcZAR"></script>
+<script type="text/javascript">
+  $(function () {
+    ShowMap('113.54143,22.274386', '2000');
+  })
+  function ShowMap(zuobiao, zoom) {
+    var arrzuobiao = zuobiao.split(',');
+    var map = new BMap.Map("allmap");
+    map.centerAndZoom(new BMap.Point(arrzuobiao[0], arrzuobiao[1]), zoom);
+    map.addControl(new BMap.NavigationControl());
+    var marker = new BMap.Marker(new BMap.Point(arrzuobiao[0], arrzuobiao[1]));
+    map.addOverlay(marker);
+ 
+  }
+</script>
