@@ -816,47 +816,10 @@
       height: 1.125rem;
       width: 1.125rem;
       border-radius: 50%;
-      position: fixed;
-      bottom: 2.5rem;
-      z-index: 1002;
-      right: 87.5rem;
+      background: rgba(255,0,0,0.7);
     }
 
-    /* run_top_right为飞入的商品标签的class * */
-    .run_top_right {
-      display: block;
-      animation: run-right 400ms 0s 1 cubic-bezier(.5, .49, .54, .55), run-top 400ms 0s 1 cubic-bezier(.5, .49, .54, .55);
-      animation-fill-mode: forwards;
-    }
 
-    /* * 下面两个动画必有，名字不要更改 */
-    @-webkit-keyframes run-top {
-      0% {
-        top: 6.25rem;
-      }
-
-      50% {
-        top: 25rem;
-      }
-
-      100% {
-        top: 6.25rem;
-      }
-    }
-
-    @-webkit-keyframes run-right {
-      0% {
-        right: 87.5rem;
-      }
-
-      100% {
-        right: 3.125rem;
-        /*transform: scale(0.3);
-         */
-        width: 1.875rem;
-        height: 1.875rem;
-      }
-    }
 
     /* 选规格 */
     .specsBox {
@@ -1783,9 +1746,10 @@
   </div>
   <script src="./lib/adaptation.js"></script>
 
-  <script src="lib/goodsFly.js"></script>
   <script src="lib/swiper.min.js"></script>
   <script src="lib/jquery.min.js"></script>
+  <script src="lib/fly.js"></script>
+
   <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
   <script>
     // 数据
@@ -1796,23 +1760,33 @@
       loop: true, // 循环模式选项
     })
     // 添加商品飞入效果
-    var goods = document.querySelectorAll('.joinCar');
-    var cartshow = true;
-    goods.forEach(function (good, index) {
+    $(function () {
+      var offset = $(".goodsCar2").offset();  //结束的地方的元素
+      console.log($(".joinCar"))
+      $(".joinCar").on("click",function (event) {   //是$(".addcar")这个元素点击促发的 开始动画的位置就是这个元素的位置为起点
+        var addcar = $(this);
+        // var img = addcar.parent().find('img').attr('src');
+        var flyer = $('<div class="ball"></div');
+      console.log(flyer)
 
-      good.addEventListener('click', function () {
-        if (cartshow) {
-          $(".noGoods").hide()
-          $(".hasGoods").show()
-          cartshow = false;
-        }
+        flyer.fly({
+          start: {
+            left: event.pageX,
+            top: event.pageY
+          },
+          end: {
+            left: offset.left + 10,
+            top: offset.top + 10,
+            width: 0,
+            height: 0
+          },
+          onEnd: function () {
+            this.destory();
+          }
+        });
+      });
 
-        GoodsFly(this, 'goodsCar')
-
-      })
-
-    })
-
+    });
     // 
     $(function () {
       // 收藏
